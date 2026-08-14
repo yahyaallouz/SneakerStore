@@ -1,0 +1,246 @@
+.filter-sidebar {
+    background: var(--card-bg);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    height: fit-content;
+}
+
+.filter-sidebar-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Filter Section */
+.filter-section {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.25rem;
+}
+
+.filter-section:last-child {
+    border-bottom: none;
+}
+
+.filter-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.875rem 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-family: var(--font-main);
+}
+
+.filter-section-header:hover {
+    color: var(--accent-color);
+}
+
+.chevron {
+    transition: transform 0.25s ease;
+    color: var(--text-secondary);
+}
+
+.chevron.open {
+    transform: rotate(180deg);
+}
+
+.filter-section-body {
+    padding-bottom: 1rem;
+    animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Radio Buttons - Category */
+.filter-radio {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.35rem 0;
+    cursor: pointer;
+    font-size: 0.875rem;
+}
+
+.filter-radio input[type="radio"] {
+    display: none;
+}
+
+.radio-custom {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.radio-custom::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--text-primary);
+    transform: scale(0);
+    transition: transform 0.2s ease;
+}
+
+.filter-radio input[type="radio"]:checked + .radio-custom {
+    border-color: var(--text-primary);
+}
+
+.filter-radio input[type="radio"]:checked + .radio-custom::after {
+    transform: scale(1);
+}
+
+.radio-label {
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.filter-radio:hover .radio-label {
+    color: var(--text-primary);
+}
+
+.filter-radio input[type="radio"]:checked ~ .radio-label {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Price Slider */
+.price-display {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.price-slider-group {
+    position: relative;
+    height: 30px;
+}
+
+.price-range-input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    outline: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.price-range-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--text-primary);
+    cursor: pointer;
+    pointer-events: auto;
+    border: 3px solid #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.price-range-input::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--text-primary);
+    cursor: pointer;
+    pointer-events: auto;
+    border: 3px solid #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+/* Size Filter */
+.size-filter-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.size-filter-btn {
+    min-width: 38px;
+    height: 36px;
+    padding: 0 0.5rem;
+    border-radius: 8px;
+    border: none;
+    background: var(--bg-secondary, #f0f0f0);
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: var(--font-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.size-filter-btn:hover {
+    background: #e0e0e0;
+    color: var(--text-primary);
+}
+
+.size-filter-btn.active {
+    background: var(--text-primary);
+    color: #fff;
+}
+
+/* Scrollbar for sidebar */
+.filter-sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.filter-sidebar::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .filter-sidebar {
+        position: fixed;
+        top: 0;
+        left: -320px;
+        width: 300px;
+        height: 100vh;
+        max-height: 100vh;
+        border-radius: 0;
+        z-index: 999;
+        transition: left 0.3s ease;
+        box-shadow: none;
+    }
+
+    .filter-sidebar.open {
+        left: 0;
+        box-shadow: 4px 0 20px rgba(0,0,0,0.15);
+    }
+}

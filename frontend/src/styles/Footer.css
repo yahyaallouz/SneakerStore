@@ -1,0 +1,58 @@
+.footer {
+    padding: 3rem 8%;
+    background: var(--bg-secondary);
+    margin-top: 4rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.brand-section h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.brand-section span {
+    color: var(--accent-color);
+}
+
+.brand-section p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.links {
+    display: flex;
+    gap: 2rem;
+}
+
+.links a {
+    color: var(--text-secondary);
+    transition: color 0.3s;
+}
+
+.links a:hover {
+    color: var(--text-primary);
+}
+
+.links .admin-footer-link {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    align-self: center;
+}
+
+.copy {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}

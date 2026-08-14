@@ -1,0 +1,166 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.85);
+    /* Slightly more opaque */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+[data-theme='dark'] .navbar {
+    background: rgba(18, 18, 18, 0.85);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo a {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--text-primary);
+    text-transform: uppercase;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: color 0.3s, transform 0.2s;
+    font-size: 0.95rem;
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--text-primary);
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.icon-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.icon-btn:hover {
+    background: var(--hover-bg);
+    transform: translateY(-2px);
+}
+
+.login-btn-nav {
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    background: var(--primary);
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.3s, transform 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.login-btn-nav:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+    color: white;
+    /* Ensure text stays white */
+}
+
+.icon-btn.cart-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    /* Explicit size */
+    width: 40px;
+    /* Explicit width to match others */
+    height: 40px;
+}
+
+.cart-badge {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: var(--error);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--background);
+    /* Cutout effect */
+}
+
+.menu-toggle {
+    display: none;
+    /* Hidden on desktop by default, handled by media queries usually */
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-primary);
+}
+
+/* Add responsive styles if needed here or keeps existing structure */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        /* Logic handled in component for mobile menu usually */
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--card-bg);
+        padding: 2rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid var(--border);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}

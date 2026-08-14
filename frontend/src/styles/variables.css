@@ -1,0 +1,83 @@
+:root {
+    /* Colors - Light Mode */
+    --bg-primary-light: #f5f7fa;
+    --bg-secondary-light: #ffffff;
+    --text-primary-light: #1a1a1a;
+    --text-secondary-light: #555555;
+    --accent-color: #ff4757;
+    /* Vibrant Red/Pink */
+    --primary: #ff4757;
+    /* Red to match Home */
+    --primary-rgb: 255, 71, 87;
+    --primary-dark: #e03e4e;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --error: #ef4444;
+    --info: #3b82f6;
+
+    --bg-primary-light: #f5f7fa;
+    --bg-secondary-light: #ffffff;
+    --text-primary-light: #1a1a1a;
+    --text-secondary-light: #555555;
+
+    --card-bg-light: #ffffff;
+    --card-bg-dark: #1e1e1e;
+    --input-bg-light: #ffffff;
+    --input-bg-dark: #2d2d2d;
+    --border-light: #e5e7eb;
+    --border-dark: #404040;
+
+    --glass-bg-light: rgba(255, 255, 255, 0.9);
+    --glass-border-light: rgba(255, 255, 255, 0.5);
+
+    /* Colors - Dark Mode */
+    --bg-primary-dark: #0f0f0f;
+    --bg-secondary-dark: #18181b;
+    --text-primary-dark: #f8fafc;
+    --text-secondary-dark: #94a3b8;
+    --glass-bg-dark: rgba(24, 24, 27, 0.8);
+    --glass-border-dark: rgba(255, 255, 255, 0.08);
+
+    /* Elements - Dark Mode */
+    --card-bg-dark: #222226;
+    /* Subtle blue-black for depth */
+    --input-bg-dark: #27272a;
+    --border-dark: rgba(255, 255, 255, 0.15);
+    /* Visible subtle border */
+    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 8px 15px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+    --transition-speed: 0.3s;
+    --font-main: 'Outfit', sans-serif;
+}
+
+[data-theme='dark'] {
+    --bg-primary: var(--bg-primary-dark);
+    --bg-secondary: var(--bg-secondary-dark);
+    --text-primary: var(--text-primary-dark);
+    --text-secondary: var(--text-secondary-dark);
+    --card-bg: var(--card-bg-dark);
+    --input-bg: var(--input-bg-dark);
+    --border: var(--border-dark);
+    --glass-bg: var(--glass-bg-dark);
+    --glass-border: var(--glass-border-dark);
+}
+
+[data-theme='light'] {
+    --bg-primary: var(--bg-primary-light);
+    --bg-secondary: var(--bg-secondary-light);
+    --text-primary: var(--text-primary-light);
+    --text-secondary: var(--text-secondary-light);
+    --card-bg: var(--card-bg-light);
+    --input-bg: var(--input-bg-light);
+    --border: var(--border-light);
+    --glass-bg: var(--glass-bg-light);
+    --glass-border: var(--glass-border-light);
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}

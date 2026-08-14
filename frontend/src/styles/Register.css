@@ -1,0 +1,139 @@
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+    background: var(--bg-primary);
+    padding: 2rem 1rem;
+    transition: background-color var(--transition-speed);
+}
+
+.register-box {
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    max-width: 440px;
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    transition: background-color var(--transition-speed), border var(--transition-speed);
+}
+
+/* Glassmorphism class helper if page has glass class */
+.register-box.glass {
+    background: var(--glass-bg);
+    border-color: var(--glass-border);
+    backdrop-filter: blur(10px);
+}
+
+.register-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+}
+
+.register-box h2 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.register-box .subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--input-bg);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.form-group input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.15);
+    outline: none;
+}
+
+.register-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    margin-top: 1rem;
+    box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.25);
+}
+
+.register-btn:hover:not(:disabled) {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(var(--primary-rgb), 0.35);
+}
+
+.register-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.error-message {
+    background: rgba(239, 68, 68, 0.15);
+    color: var(--error);
+    padding: 0.8rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.login-link a {
+    color: var(--primary);
+    font-weight: 600;
+    transition: color var(--transition-speed);
+}
+
+.login-link a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}

@@ -1,0 +1,456 @@
+.products-section {
+    padding: 3rem 4%;
+}
+
+/* Loading State */
+.loading-state {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Section Header Row */
+.section-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.75rem;
+}
+
+.section-header-row h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.highlight {
+    color: var(--accent-color);
+}
+
+/* Mobile Filter Toggle */
+.mobile-filter-toggle {
+    display: none;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1.2rem;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    background: var(--card-bg);
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    font-family: var(--font-main);
+    transition: all 0.2s;
+}
+
+.mobile-filter-toggle:hover {
+    border-color: var(--text-primary);
+}
+
+/* Products Layout - Sidebar + Content */
+.products-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* Products Content */
+.products-content {
+    min-width: 0;
+}
+
+/* Results Bar */
+.results-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.results-count {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.results-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sort-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sort-wrapper label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.sort-wrapper select {
+    padding: 0.5rem 2rem 0.5rem 0.75rem;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    background: var(--card-bg);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23666' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.sort-wrapper select:focus {
+    border-color: var(--text-primary);
+}
+
+/* Active Filters Bar */
+.active-filters-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.active-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+.filter-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.filter-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.75rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    white-space: nowrap;
+}
+
+.tag-remove {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+    padding: 0;
+    line-height: 1;
+    transition: color 0.15s;
+}
+
+.tag-remove:hover {
+    color: var(--accent-color);
+}
+
+.clear-all-btn {
+    border: none;
+    background: none;
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+    font-family: var(--font-main);
+    white-space: nowrap;
+    margin-left: auto;
+    transition: opacity 0.2s;
+}
+
+.clear-all-btn:hover {
+    opacity: 0.7;
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+/* No Results */
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text-secondary);
+}
+
+.no-results p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.reset-btn {
+    padding: 0.6rem 1.5rem;
+    border: 1.5px solid var(--text-primary);
+    background: transparent;
+    color: var(--text-primary);
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: var(--font-main);
+    transition: all 0.2s;
+}
+
+.reset-btn:hover {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+}
+
+/* Mobile overlay */
+.filter-overlay {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .products-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .mobile-filter-toggle {
+        display: flex;
+    }
+
+    .filter-overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 998;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .products-section {
+        padding: 2rem 3%;
+    }
+
+    .section-header-row h2 {
+        font-size: 1.5rem;
+    }
+
+    .results-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+}
+
+/* ==========================================
+   Collection Specific Pages (Men, Women, Kids)
+   ========================================== */
+.collection-hero {
+    border-radius: 16px;
+    padding: 2.5rem 3.5rem;
+    margin: 1.5rem 4% 2.5rem 4%;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    gap: 2rem;
+}
+
+.hero-content {
+    flex: 1;
+    z-index: 2;
+}
+
+.collection-hero h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+}
+
+.collection-hero p {
+    font-size: 1.1rem;
+    max-width: 500px;
+    opacity: 0.95;
+    line-height: 1.5;
+}
+
+.hero-image-container {
+    width: 320px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+.floating-shoe {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    transform: rotate(-15deg);
+    filter: drop-shadow(-10px 20px 15px rgba(0, 0, 0, 0.45));
+    animation: float-shoe 4s ease-in-out infinite;
+}
+
+@keyframes float-shoe {
+    0%, 100% {
+        transform: translateY(0) rotate(-15deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(-10deg);
+    }
+}
+
+/* Specific Category Hero Gradients */
+.men-hero {
+    background: linear-gradient(135deg, #111111 0%, #292929 50%, #474747 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.women-hero {
+    background: linear-gradient(135deg, #ff6b81 0%, #ff4757 100%);
+    box-shadow: 0 4px 20px rgba(255, 71, 87, 0.2);
+}
+
+.kids-hero {
+    background: linear-gradient(135deg, #2e86de 0%, #54a0ff 100%);
+    box-shadow: 0 4px 20px rgba(46, 134, 222, 0.2);
+}
+
+.collection-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    border-bottom: 1.5px solid var(--border);
+    padding-bottom: 1rem;
+}
+
+.collection-header-row h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* Brand Filter Pill Tabs */
+.filter-tabs {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    background: var(--bg-secondary, #f1f3f5);
+    padding: 0.3rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.filter-btn {
+    padding: 0.5rem 1.2rem;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-radius: 9px;
+    cursor: pointer;
+    font-family: var(--font-main);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-btn:hover {
+    color: var(--text-primary);
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.filter-btn.active {
+    background: var(--text-primary);
+    color: var(--bg-primary, #ffffff);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme='dark'] .filter-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 768px) {
+    .collection-hero {
+        padding: 2.5rem 2rem;
+        margin: 1rem 3% 0 3%;
+    }
+
+    .collection-hero h1 {
+        font-size: 2rem;
+    }
+
+    .collection-hero p {
+        font-size: 0.95rem;
+    }
+
+    .collection-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .collection-header-row .filter-tabs {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .collection-header-row .filter-btn {
+        flex: 1;
+        text-align: center;
+        padding: 0.5rem 0.5rem;
+    }
+}

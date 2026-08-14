@@ -1,0 +1,217 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background: var(--background);
+    padding: 1rem;
+}
+
+.login-box {
+    background: var(--card-bg);
+    padding: 3rem;
+    /* More padding */
+    border-radius: 16px;
+    /* Smooth corners */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    /* Soft, deep shadow */
+    width: 100%;
+    max-width: 420px;
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative top bar */
+.login-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: var(--text);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 1.8rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.6rem;
+    color: var(--text);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 1rem;
+    /* Larger touch target */
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--input-bg);
+    color: var(--text);
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.form-group input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.1);
+    outline: none;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    box-shadow: 0 4px 12px rgba(var(--primary-rgb, 0, 0, 0), 0.2);
+}
+
+.login-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(var(--primary-rgb, 0, 0, 0), 0.3);
+}
+
+.error-message {
+    background: #fee2e2;
+    color: #ef4444;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+    border-left: 4px solid #ef4444;
+}
+
+@media (prefers-color-scheme: dark) {
+    .error-message {
+        background: rgba(239, 68, 68, 0.1);
+    }
+}
+
+.login-box .subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.signup-link a {
+    color: var(--primary);
+    font-weight: 600;
+    transition: color var(--transition-speed);
+}
+
+.signup-link a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+.login-box.glass {
+    background: var(--glass-bg);
+    border-color: var(--glass-border);
+    backdrop-filter: blur(10px);
+}
+
+/* ========== Admin Login Styles ========== */
+.admin-login-container {
+    background: #f0f2f5;
+    min-height: 80vh;
+}
+
+.admin-login-box {
+    background: #ffffff;
+    padding: 3rem 3.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    max-width: 480px;
+    border: none;
+}
+
+.admin-login-box::before {
+    height: 5px;
+    background: var(--primary);
+}
+
+.admin-login-box h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: #1a1a1a;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.admin-form-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.admin-form-group label {
+    min-width: 80px;
+    text-align: right;
+    color: #333;
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+.admin-form-group input {
+    flex: 1;
+    padding: 0.7rem 0.8rem;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    background: #fff;
+    color: #1a1a1a;
+    font-size: 0.95rem;
+}
+
+.admin-form-group input:focus {
+    border-color: var(--primary);
+    box-shadow: none;
+    outline: none;
+}
+
+.admin-login-box .login-btn {
+    margin-top: 0.5rem;
+    border-radius: 6px;
+    padding: 0.85rem;
+    font-size: 1rem;
+}
+
+.admin-login-box .login-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.admin-login-box .error-message {
+    margin-bottom: 1.5rem;
+}
